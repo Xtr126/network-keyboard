@@ -28,7 +28,7 @@ static const struct {
     { KEY_N, "N" },
     { KEY_O, "O" },
     { KEY_P, "P" },
-    { KEY_Q, "W" },
+    { KEY_Q, "Q" },
     { KEY_R, "R" },
     { KEY_S, "S" },
     { KEY_T, "T" },
@@ -73,7 +73,9 @@ static const struct {
     { KEY_F9, "f9" },
     { KEY_F10, "f10" },
     { KEY_F11, "f11" },
-    { KEY_F12, "f12" },
+    { KEY_F12, "f12" },    
+    { KEY_CAPSLOCK, "{capslock}" },    
+    { KEY_ESC, "esc" },
 };
 
 static const struct { const char* js; int keyvalue;  } key_value_labels[] = {
