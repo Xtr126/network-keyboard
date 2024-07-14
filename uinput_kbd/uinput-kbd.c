@@ -40,8 +40,8 @@ void init_uinputkbd()
     */
    ioctl(fd, UI_SET_EVBIT, EV_KEY);
 
-   for (size_t i = 1; i<=70; i++) {
-      ioctl(fd, UI_SET_KEYBIT, i);
+   for (size_t i = 0; i < sizeof(key_code_labels) / sizeof(*key_code_labels); i++) {
+      ioctl(fd, UI_SET_KEYBIT, key_code_labels[i].keycode);
    }
 
    memset(&usetup, 0, sizeof(usetup));

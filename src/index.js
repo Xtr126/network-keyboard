@@ -20,7 +20,7 @@ let keyboard = new Keyboard(".simple-keyboard-main", {
       "{tab} Q W E R T Y U I O P { } |",
       '{capslock} A S D F G H J K L : " {enter}',
       "{shiftleft} Z X C V B N M < > ? {shiftright}",
-      "{controlleft} fn win {altleft} {space} {altright} {controlleft}"
+      "{controlleft} {meta} {altleft} {space} {altright} {controlleft}"
     ],
   },
   display: {
