@@ -5,13 +5,14 @@ import "./index.css";
 
 let commonKeyboardOptions = {
   onKeyPress: button => onKeyPress(button),
+  onKeyReleased: button => onKeyRelease(button),
   theme: "simple-keyboard hg-theme-default hg-layout-default",
   syncInstanceInputs: true,
   mergeDisplay: true
 };
 
 let keyboard = new Keyboard(".simple-keyboard-main", {
-  onKeyPress: button => onKeyPress(button),
+  ...commonKeyboardOptions,
   layout: {
     'default': [
       "esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12",
@@ -69,7 +70,21 @@ let url = 'ws' + (window.location.protocol === 'https:' ? 's' : '')  + '://' +
 let socket = new WebSocket(url);
 socket.binaryType = 'arraybuffer';
 
+let keysPressed = new Set()
+
 function onKeyPress(button) {
-  console.log("Button pressed", button);
-  socket.send(button);
+  if (!keysPressed.has(button)) {
+    console.log("Button pressed", button);
+    socket.send(`${button} down`);
+  } else {
+    console.log("Button repeat", button);
+    socket.send(`${button} repeat`);
+  }
+  keysPressed.add(button);
+}
+
+function onKeyRelease(button) {
+  console.log("Button released", button);
+  socket.send(`${button} up`);
+  keysPressed.delete(button);
 }
