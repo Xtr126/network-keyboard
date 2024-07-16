@@ -2,9 +2,9 @@
   display: flex;
   background-color: rgba(0, 0, 0, 0.1);
   justify-content: center;
-  width: 924px;
-  margin: 100 auto;
-  border-radius: 5px;
+  width: 984px;
+  margin-top: 70px;
+  height: 540px;
 }
 
 
@@ -39,8 +39,8 @@
 
 .controlArrows {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  height: 540px;
   flex-flow: column;
 }
 
@@ -70,13 +70,35 @@
   width: 350px;
 }
 
+.hg-theme-default .hg-button {
+  color: #ffffff;
+  background-color: rgb(0, 0, 0);
+  margin: 0;
+  height: 85px;
+  font-size: 20;
+  animation: colorRotate 6s linear 0s infinite;
+}
 
-.hg-button.hg-standardBtn {
-  height: 50px;
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
 }
-.hg-button.hg-functionBtn {
-  height: 50px;
+
+
+.simple-keyboard.hg-theme-default, :root {
+  background-color: rgba(24, 24, 24, 0.932);
 }
-.hg-theme-default .hg-button.hg-standardBtn {
-  width: 0px;
-}
+
