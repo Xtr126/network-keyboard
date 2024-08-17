@@ -76,7 +76,7 @@
   margin: 0;
   height: 85px;
   font-size: 20;
-  animation: colorRotate 6s linear 0s infinite;
+  /*animation: colorRotate 6s linear 0s infinite;*/
 }
 
 @keyframes colorRotate {
