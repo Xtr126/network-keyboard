@@ -1,1 +1,2 @@
-Network keyboard
+# Network keyboard
+Simple project using libmicrohttpd/websocket and uinput to use one mobile device as a touch keyboard for an Android device. The other device only needs to run a compatible browser. Made for myself as I wanted to have a "mini laptop" with two phones, re-purposing an old phone. 
